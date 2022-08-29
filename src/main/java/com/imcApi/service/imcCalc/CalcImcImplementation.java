@@ -6,6 +6,6 @@ import org.springframework.stereotype.Component;
 public class CalcImcImplementation implements CalcImc {
     @Override
     public double calcImc(double weight, double height) {
-        return (weight / (height * height));
+        return Math.round((weight / (height * height)) * 100.0) / 100.0;
     }
 }
