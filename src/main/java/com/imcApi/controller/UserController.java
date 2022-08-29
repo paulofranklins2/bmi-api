@@ -22,7 +22,7 @@ public class UserController {
     private final UserImplementation userImplementation;
 
     @GetMapping("/list")
-    public ResponseEntity<Response> getUserList(){
+    public ResponseEntity<Response> getUserList() {
         return ResponseEntity.ok(
                 Response.builder()
                         .timeStamp(now())
@@ -35,7 +35,7 @@ public class UserController {
     }
 
     @GetMapping("/get/{id}")
-    public ResponseEntity<Response> getUser(@PathVariable("id") String id){
+    public ResponseEntity<Response> getUser(@PathVariable("id") String id) {
         return ResponseEntity.ok(
                 Response.builder()
                         .timeStamp(now())
@@ -48,7 +48,7 @@ public class UserController {
     }
 
     @PostMapping("/save")
-    public ResponseEntity<Response> saveUser(@RequestBody @Valid User user){
+    public ResponseEntity<Response> saveUser(@RequestBody @Valid User user) {
         return ResponseEntity.ok(
                 Response.builder()
                         .timeStamp(now())
@@ -61,7 +61,7 @@ public class UserController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<Response> deleteUser(@PathVariable("id") String id){
+    public ResponseEntity<Response> deleteUser(@PathVariable("id") String id) {
         return ResponseEntity.ok(
                 Response.builder()
                         .timeStamp(now())
