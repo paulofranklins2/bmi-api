@@ -13,4 +13,11 @@ class CalcImcImplementationTest {
         double result = calcImcImplementation.calcImc(60, 1.70);
         Assertions.assertEquals(20.76, result, DELTA);
     }
+
+    @Test
+    public void shouldCheckIfRoundingWrong(){
+        CalcImcImplementation calcImcImplementation = new CalcImcImplementation();
+        double result = calcImcImplementation.calcImc(60, 1.70);
+        Assertions.assertNotEquals(20.77, result, DELTA);
+    }
 }
