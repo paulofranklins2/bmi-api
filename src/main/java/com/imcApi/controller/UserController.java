@@ -60,6 +60,19 @@ public class UserController {
         );
     }
 
+    @PatchMapping("/update")
+    public ResponseEntity<Response> updateUser(@RequestBody @Valid User user) {
+        return ResponseEntity.ok(
+                Response.builder()
+                        .timeStamp(now())
+                        .data(of("user", userImplementation.updateUser(user)))
+                        .message("User updated successfully")
+                        .status(OK)
+                        .statusCode(OK.value())
+                        .build()
+        );
+    }
+
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Response> deleteUser(@PathVariable("id") String id) {
         return ResponseEntity.ok(

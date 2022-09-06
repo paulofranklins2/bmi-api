@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.Collection;
+import java.util.Date;
 
 @Service
 @Transactional
@@ -25,10 +26,11 @@ public class UserImplementation implements UserService {
     private LogicHealthStatus healthStatus;
 
     public User saveUser(User user) {
-        log.info("Saving new user name: {}", user.getName());
+        log.info("Saving new user name: {}", user.getFirstName());
         double saveIMC = calcImc.calcImc(user.getWeight(), user.getHeight());
         HealthStatus saveHealthStatus = healthStatus.logicStatus(saveIMC);
         user.setImc(saveIMC);
+        user.setDate(new Date());
         user.setHealthStatus(saveHealthStatus);
         return userRepository.save(user);
     }
@@ -41,15 +43,21 @@ public class UserImplementation implements UserService {
 
     @Override
     public Boolean deleteUser(String id) {
-        log.info("Deliting user id: {}", id);
+        log.info("Deleting user id: {}", id);
         userRepository.deleteById(id);
         return Boolean.TRUE;
     }
 
     @Override
     public Collection<User> userList(int limit) {
-        log.info("Fetching users list {},");
+        log.info("Fetching user list");
         return userRepository.findAll(PageRequest.of(0, limit)).toList();
+    }
+
+    @Override
+    public User updateUser(User user) {
+        log.info("Updating user: {}", user.getFirstName());
+        return userRepository.save(user);
     }
 
 }

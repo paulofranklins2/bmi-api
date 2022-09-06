@@ -9,6 +9,8 @@ public interface UserService {
 
     User getUser(String id);
 
+    User updateUser(User user);
+
     Boolean deleteUser(String id);
 
     Collection<User> userList(int limit);
