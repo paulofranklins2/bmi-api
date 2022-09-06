@@ -1,0 +1,25 @@
+server:
+  port: '8080'
+
+spring:
+  datasource:
+    username: root
+    url: jdbc:mysql://localhost:3307/imcApi
+    password: root
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 783176748871-arr467pophaq3ukt0adnu3010rifnkoa.apps.googleusercontent.com
+            client-secret: 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
+  jpa:
+    properties:
+      hibernate:
+        format_sql: 'true'
+        show_sql: 'true'
+    hibernate:
+      ddl-auto: update
