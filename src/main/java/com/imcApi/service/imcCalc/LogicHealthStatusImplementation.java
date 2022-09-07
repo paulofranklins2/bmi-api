@@ -9,11 +9,11 @@ public class LogicHealthStatusImplementation implements LogicHealthStatus {
     public HealthStatus logicStatus(double imc) {
         HealthStatus healthStatus;
         if (imc < 18.5) {
-            healthStatus = (HealthStatus.Underweight);
+            healthStatus = (HealthStatus.UnderWeight);
         } else if (imc < 24.9) {
             healthStatus = (HealthStatus.NormalWeight);
         } else if (imc < 29.9) {
-            healthStatus = (HealthStatus.Overweight);
+            healthStatus = (HealthStatus.OverWeight);
         } else {
             healthStatus = (HealthStatus.Obesity);
         }
