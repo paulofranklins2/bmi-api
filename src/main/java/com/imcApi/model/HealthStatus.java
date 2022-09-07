@@ -1,7 +1,7 @@
 package com.imcApi.model;
 
 public enum HealthStatus {
-    Underweight("Under Weight"), NormalWeight("Normal Weight"), Overweight("Over Weight"), Obesity("Obesity");
+    UnderWeight("Under Weight"), NormalWeight("Normal Weight"), OverWeight("Over Weight"), Obesity("Obesity");
     private final String healthStatus;
 
     HealthStatus(String s) {
