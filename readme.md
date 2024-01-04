@@ -1,4 +1,4 @@
-# IMC API
+# BMI API
 
 This project is an API for managing user data and calculating their Body Mass Index (BMI) along with their health status based on the BMI result. The API is built using the Spring Boot framework and follows RESTful principles.
 
