@@ -29,7 +29,7 @@ public class User {
     private double height;
     @NonNull
     private double weight;
-    private double imc;
+    private double bmi;
     private HealthStatus healthStatus;
     private Date date;
 

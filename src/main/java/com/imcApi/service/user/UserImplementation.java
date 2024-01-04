@@ -29,7 +29,7 @@ public class UserImplementation implements UserService {
         log.info("Saving new user name: {}", user.getFirstName());
         double saveIMC = calcImc.calcImc(user.getWeight(), user.getHeight());
         HealthStatus saveHealthStatus = healthStatus.logicStatus(saveIMC);
-        user.setImc(saveIMC);
+        user.setBmi(saveIMC);
         user.setDate(new Date());
         user.setHealthStatus(saveHealthStatus);
         return userRepository.save(user);
